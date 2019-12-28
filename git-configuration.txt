@@ -1,0 +1,80 @@
+git config
+
+git config --global user.name "git-user1" 
+
+git config --global user.email "Your_email"
+
+git config --list --> List all of your settings
+
+git help commit --> Like ansible-doc "name of the module"
+
+
+
+Creating Our First project :
+
+mkdir -p docker
+
+git init 
+
+ls -la
+
+
+Configuration :
+
+https://www.atlassian.com/git/tutorials/install-git#windows
+
+
+Installation :
+
+wget https://github.com/git/git/archive/v2.7.2.tar.gz -O git.tar.gz
+
+tar -zxf git.tar.gz
+
+cd git-2.7.2
+
+make configure
+
+./configure --prefix=/usr/local
+
+make install
+
+git config --list 
+
+git config --global user.name "Arun Kathick"
+git config --global user.email "your_email@example.com"
+
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com" -f ./key_name
+
+eval "$(ssh-agent -s)"
+
+ssh-add ~/.ssh/id_rsa
+
+cat ~/.ssh/id_rsa.pub
+
+Goto settings --> SSH and GPG Keys
+
+ssh -T git@github.com
+
+
+
+
+# create a new directory, and initialize it with git-specific functions
+git init my-repo
+
+# change into the `my-repo` directory
+cd my-repo
+
+# create the first file in the project
+touch README.md
+
+# git isn't aware of the file, stage it
+git add README.md
+
+# take a snapshot of the staging area
+git commit -m "add README to initial commit"
+
+# provide the path for the repository you created on github
+git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+
+# push changes to github
+git push --set-upstream origin master
